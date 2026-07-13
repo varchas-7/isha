@@ -1,0 +1,39 @@
+:root {
+
+    /* ===========================
+       COLORS
+    =========================== */
+
+    --color-bg: #08111F;
+    --color-surface: #12233D;
+
+    --color-accent: #D4A373;
+    --color-accent-hover: #c68d55;
+
+    --color-pink: #F7D6E0;
+
+    --color-text: #FAFAFA;
+    --color-text-soft: #D9D9D9;
+
+    /* ===========================
+       TYPOGRAPHY
+    =========================== */
+
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Poppins", sans-serif;
+
+    /* ===========================
+       SPACING
+    =========================== */
+
+    --section-padding: 120px;
+    --container-width: 700px;
+
+    /* ===========================
+       ANIMATION
+    =========================== */
+
+    --transition-fast: 0.3s;
+    --transition-medium: 0.6s;
+
+}

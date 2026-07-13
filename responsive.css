@@ -1,0 +1,48 @@
+@media(max-width:768px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+    }
+
+    .story-title {
+
+        font-size: 2.8rem;
+
+    }
+
+    .story-text {
+
+        font-size: 1.05rem;
+
+        line-height: 1.9;
+
+    }
+
+    .scene-text {
+
+        font-size: 2.8rem;
+
+        line-height: 1.5;
+
+    }
+
+    .final-initials {
+        font-size: 4.5rem;
+        /* Scales down the names so they don't break the screen */
+        letter-spacing: 4px;
+    }
+
+    .final-subtitle {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+}
