@@ -91,7 +91,7 @@ function createStars(count) {
 
 }
 
-    createStars(150);
+    createStars(170);
 
     // ⭐ SHOOTING STAR GENERATOR
     function spawnShootingStar() {

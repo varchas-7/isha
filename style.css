@@ -122,7 +122,9 @@ button:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top, #1f355f, #08111f);
+    /* background: radial-gradient(circle at top, #1f355f, #08111f); */
+    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+    z-index: 1; /* Keeps it above the base color but below the stars */
 }
 
 .background::after {
@@ -193,13 +195,18 @@ button:hover {
 }
 
 @keyframes twinkle {
-    0% {
-        opacity: 0.2;
-        transform: scale(0.8);
+    0%, 100% {
+        /* The star is dim and tiny */
+        opacity: 0.05;
+        transform: scale(0.4);
+        box-shadow: 0 0 0px rgba(255, 255, 255, 0); 
     }
-    100% {
+    50% {
+        /* The star flares up brightly at its peak */
         opacity: 1;
-        transform: scale(1.3);
+        transform: scale(1.2);
+        /* Adds a sharp white core and a soft gold/pink halo */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 25px rgba(212, 163, 115, 0.7);
     }
 }
 
@@ -305,6 +312,16 @@ button:hover {
 
 }
 
+@keyframes gentlePulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 163, 115, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 163, 115, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 163, 115, 0); }
+}
+
+#beginJourney {
+    animation: gentlePulse 2s infinite;
+}
+
 /* ========================================
    CINEMATIC SCENES
 ======================================== */
@@ -345,9 +362,9 @@ button:hover {
 
     transition:
 
-        opacity 1.8s ease,
+        opacity 1.0s ease,
 
-        transform 1.8s ease;
+        transform 1.0s ease;
 
 }
 
@@ -373,8 +390,12 @@ button:hover {
 
     color:var(--color-pink);
 
-    letter-spacing:1px;
+    letter-spacing:2px;
 
+}
+
+.scene-text, h1 {
+    text-shadow: 0 4px 25px rgba(188, 22, 200, 0.8);
 }
 
 /* ========================================
@@ -407,10 +428,17 @@ button:hover {
     gap: 20px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Allows stacking if it gets too wide */
 }
 
 #yesButton, #noButton {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, opacity 0.5s ease;
+}
+
+#noButton {
+    max-width: 90vw; 
+    white-space: normal; /* Allows text to wrap */
+    line-height: 1.4;
 }
 
 .btn-secondary {
